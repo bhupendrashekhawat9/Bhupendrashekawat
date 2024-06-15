@@ -1,0 +1,119 @@
+:root {
+  --gradient-color: linear-gradient(
+    90deg,
+    rgba(58, 58, 180, 0.9455128205128205) 0%,
+    rgba(253, 141, 29, 0.9551282051282052) 53%,
+    rgba(213, 69, 252, 1) 100%
+  );
+}
+
+.bug-board {
+  display: grid;
+  grid-template-columns: repeat(200, 1fr);
+  grid-template-rows: repeat(100, 1fr);
+  
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+#Bug {
+  grid-column-start: 50;
+  grid-row-start: 35;
+  position: relative;
+}
+#Food {
+  grid-row-start: 23;
+  grid-column-start: 23;
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+}
+#Name {
+  width: max-content;
+  grid-row-start: 22;
+  grid-column-start: 22;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 80vw;
+  overflow: hidden;
+  padding: 1rem;
+}
+.gradient-text {
+  font-size: 24px;
+  font-weight: bold;
+  background: rgb(58, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(58, 58, 180, 0.9455128205128205) 0%,
+    rgba(253, 141, 29, 0.9551282051282052) 53%,
+    rgba(213, 69, 252, 1) 100%
+  ); /* Gradient colors */
+  -webkit-background-clip: text;
+  color: transparent;
+}
+#Keypad {
+  position: absolute;
+  height: max-content;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: none;
+  grid-template-columns: 3rem 3rem 3rem;
+  grid-template-rows: 3rem 3rem;
+}
+#Keypad .arrowUp {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+#Keypad .arrowLeft {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+#Keypad .arrowDown {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+#Keypad .arrowRight {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+#Keypad > div {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid --gradient-color 5px;
+}
+
+@media (max-width: 600px) {
+    .bug-board{
+        grid-template-columns: repeat(50, 1fr);
+        grid-template-rows: repeat(100, 1fr);
+    }
+    #Bug {
+        grid-column-start: 25;
+        grid-row-start: 17;
+        position: relative;
+        /* z-index: 50; */
+    }
+    #Food {
+        grid-row-start: 6;
+        grid-column-start: 6;
+    
+      }
+    #Keypad{
+        display: grid;
+    }
+}
