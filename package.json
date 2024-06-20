@@ -3,8 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://bhupendrashekhawat9.github.io/BHupendrashekawat
-",
+  "homepage": "https://bhupendrashekhawat9.github.io/Bhupendrashekawat",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
